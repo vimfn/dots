@@ -4,4 +4,4 @@
 
 # Credits:
 
-- These dotfiles are highly inspired by ~~shamefully copied~~ **[LinuxMobile](https://github.com/linuxmobile/hyprland-dots)** dots. 
+- These dotfiles are highly inspired by ~~shamefully copied from~~ **[LinuxMobile](https://github.com/linuxmobile/hyprland-dots)** dots. 
