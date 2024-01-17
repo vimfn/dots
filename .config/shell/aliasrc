@@ -1,0 +1,10 @@
+alias neofetch="fastfetch"
+alias f='open "$(fzf)"'
+alias ydl='yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(title)s.%(ext)s" '
+alias n="ncmpcpp"
+alias b="cd ~/library/books/"
+alias pn="pnpm"
+alias say="google_speech"
+alias code="vscodium"
+alias v="nvim"
+alias dots='/usr/bin/git --git-dir=$HOME/dots/ --work-tree=$HOME'
