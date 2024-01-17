@@ -1,0 +1,17 @@
+#!/bin/sh
+
+send_notification() {
+    brightness=$(brightnessctl g)
+    dunstify -a "changebrightness" -u low -r 9993 -h int:value:"$brightness" -i "brightness" "Brightness" "Currently at $brightness"
+}
+
+case $1 in
+up)
+    brightnessctl s +10 # Increase by 10 (adjust as needed)
+    send_notification "$1"
+    ;;
+down)
+    brightnessctl s 10- # Decrease by 10 (adjust as needed)
+    send_notification "$1"
+    ;;
+esac

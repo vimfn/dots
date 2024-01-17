@@ -1,0 +1,10 @@
+#!/bin/sh
+
+hp_mac="00:21:6A:0C:4C:8C"
+hp_sink="bluez_output.00_21_6A_0C_4C_8C.1"
+
+bluetoothctl power on
+bluetoothctl connect $hp_mac
+pactl set-default-sink $hp_sink
+
+notify-send "Connected to Headphone."

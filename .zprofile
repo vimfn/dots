@@ -1,0 +1,1 @@
+/home/ag/.config/shell/profile

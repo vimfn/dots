@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Pass basic rofi integration
+# Maintained Timothée Floure <timothee.floure@fnux.ch>
+
+# get all password files and create an array
+list_passwords() {
+   cd "${root}"
+   passwords=$(find -iname '*.gpg')
+
+   for password in `find -iname '*.gpg'`; do
+      filename="${password:1}"
+      echo "$filename"
+   done
+}
+
+# menu
+menu () {
+   unset selected_password
+   list_passwords
+   selected_password="$(echo -e "$(list_passwords 2>/dev/null)" \
+   | _rofi -dmenu -p "pass > ")"
+   pass -c "${selected_password%????}" #> /dev/null 2>&1 
+}
+
+function _rofi () {
+   rofi -dpi 1 -dmenu -font "snap 10" -fg "#eee8d5" -bg "#073642" -hlfg "#ffb964" -hlbg "#073642" -o 85 "$@"
+}
+
+main () {
+   export root="$PASSWORD_STORE_DIR"
+   menu
+}
+main "$@"
