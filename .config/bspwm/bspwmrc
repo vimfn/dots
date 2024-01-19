@@ -33,6 +33,7 @@ bspc config focus_follows_pointer true
 
 # Autostarts
 picom --config $HOME/.config/picom/picom.conf &
-polybar &
+# polybar &
+$HOME/.config/polybar/poly.sh &
 dunst &
 xsetroot -cursor_name left_ptr &

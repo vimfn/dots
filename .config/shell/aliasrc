@@ -7,4 +7,7 @@ alias pn="pnpm"
 alias say="google_speech"
 alias code="vscodium"
 alias v="nvim"
+alias zathura="swallow zathura"
+alias mpv="swallow mpv"
+alias sxiv="swallow sxiv"
 alias dots='/usr/bin/git --git-dir=$HOME/dots/ --work-tree=$HOME'

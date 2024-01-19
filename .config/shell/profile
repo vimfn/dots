@@ -1,6 +1,6 @@
-export EDITOR="vim"
-export TERMINAL="st"
-export BROWSER="firefox"
+export EDITOR="nvim"
+export TERMINAL="kitty"
+export BROWSER="chromium"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -13,6 +13,7 @@ export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/.password-store"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export PATH=$HOME/.local/bin:$PATH
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
 export MPD_HOST="localhost"
 export MPD_PORT="6600"
