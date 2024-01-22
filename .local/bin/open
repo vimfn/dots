@@ -14,7 +14,7 @@ case $(file --mime-type "$@" -bL) in
       # Add support for sxiv for image files
       swallow sxiv "$@"
       ;;
-   application/pdf | application/postscript)
+   application/pdf | application/postscript | application/epub+zip)
       swallow zathura "$@"
       ;;
     text/* | application/x-shellscript | application/javascript)
