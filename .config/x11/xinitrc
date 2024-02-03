@@ -29,4 +29,4 @@ unclutter --timeout=3 &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 greenclip daemon &
-exec bspwm
+exec i3
