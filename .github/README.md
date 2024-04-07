@@ -5,4 +5,4 @@ This is where I keep all of the various dotfiles for different programs I use. I
 I am on my way of organizing all the dotfiles, so please be patient.
 
 ---
-Also checkout the [hyprland branch](https://github.com/arnvgh/dots/tree/hyprland) for my wayland specific dotfiles.
+Also checkout the [hyprland branch](https://github.com/arnvgh/dots/tree/hyprland) for my wayland specific dotfiles and find my wallpapers collection [here](https://github.com/arnvgh/walls).
