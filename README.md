@@ -78,5 +78,9 @@ rsync -avxHAXP --exclude '.git*' .* ~/
 
 ## Credits
 
-- Linuxmobile's Hyprland [dotfiles](https://github.com/linuxmobile/hyprland-dots/) (As a base config)
+- Linuxmobile's Hyprland [dotfiles](https://github.com/linuxmobile/hyprland-dots/)
 - [r/unixporn](https://www.reddit.com/r/unixporn) (Inspirations)
+
+---
+Also checkout the [bspwm branch](https://github.com/arnvgh/dots/tree/bspwm) for my Xorg specific dotfiles and find my wallpapers collection [here](https://github.com/arnvgh/walls).
+
