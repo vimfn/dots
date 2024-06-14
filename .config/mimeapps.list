@@ -1,4 +1,0 @@
-
-[Default Applications]
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
-x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
