@@ -1,0 +1,13 @@
+#!/bin/sh
+
+CHOSEN=$(printf "Lock\nSuspend\nReboot\nHibernate\nPower Off\nLog Out" | dmenu -i)
+
+case "$CHOSEN" in
+	"Lock") i3lock -i /home/ag/.config/i3/lock.png --nofork ;;
+	"Suspend") systemctl suspend-then-hibernate ;;
+	"Reboot") systemctl peboot ;;	
+	"Hibernate") systemctl hibernate ;;	
+	"Power Off") systemctl poweroff ;;
+	"Log Out") pkill -u $USER ;;
+	*) exit 1 ;;
+esac

@@ -1,0 +1,18 @@
+#!/bin/bash
+# Dependencies: tesseract-ocr imagemagick maim xsel
+
+IMG=`mktemp`
+trap "rm $IMG*" EXIT
+
+#scrot -s $IMG.png -q 100
+maim -s --nodrag --quality=10 $IMG.png
+# increase image quality with option -q from default 75 to 100
+
+mogrify -modulate 100,0 -resize 400% $IMG.png
+#should increase detection rate
+
+tesseract $IMG.png $IMG &> /dev/null
+cat $IMG.txt | xsel -bi
+notify-send "Text copied" "$(cat $IMG.txt)"
+
+exit

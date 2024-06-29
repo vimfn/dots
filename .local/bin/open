@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# Launches files based on their mimetypes
+# Usage: launch [FILE...]
+# Dependencies: file
+
+case $(file --mime-type "$@" -bL) in
+   # Check for the mimetype of your file (This is POSIX regex)
+   video/* | audio/* | image/gif)
+      # Launch using your favorite application
+      mpv "$@"
+      ;;
+   image/*)
+      # Add support for sxiv for image files
+      sxiv "$@"
+      ;;
+   application/pdf | application/postscript | application/epub+zip)
+      zathura "$@"
+      ;;
+    text/* | application/x-shellscript | application/javascript)
+      # Open text, script, or code files using nvim
+      nvim "$@"
+      ;;
+   *) exit 1 ;;
+esac
+

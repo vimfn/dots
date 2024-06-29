@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if [ $# -eq 1 ]; then
+    # Use the image passed as an argument
+    wall="$1"
+else
+    # Use a random image from the specified location
+    wall=$(find ~/library/walls/ -type f -name "*.jpg" -o -name "*.png" | shuf -n 1)
+fi
+
+# Check if a valid wallpaper is found
+if [ -f "$wall" ]; then
+    # Set the selected wallpaper as background
+    # xwallpaper --zoom "$wall" > /dev/null
+
+    # Set color scheme
+    wal -c > /dev/null
+    wal -i "$wall" > /dev/null
+
+else
+    echo "No valid wallpaper found."
+fi
+

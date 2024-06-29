@@ -1,0 +1,22 @@
+colors:
+  body: none
+  date: red
+  tags: yellow
+  title: cyan
+default_hour: 9
+default_minute: 0
+editor: nvim -c 'set shada= noswapfile noundofile nobackup nowritebackup noshelltemp
+  history=0 nomodeline secure'
+encrypt: true
+highlight: true
+indent_character: '|'
+inewrap: 79
+journals:
+  default:
+    encrypt: true
+    journal: /home/ag/notes/journal.txt
+linewrap: 79
+tagsymbols: '#@'
+template: false
+timeformat: '%F %r'
+version: v4.1

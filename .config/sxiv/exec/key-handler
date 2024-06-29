@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while read file
+do
+  case "$1" in
+    "w") setbg "$file" ;; 
+    "d") mv "$file" ~/.trash;; 
+    "c") cat "$file" | xclip -sel c -t image/png;; 
+  esac 
+done
