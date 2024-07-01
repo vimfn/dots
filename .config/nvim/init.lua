@@ -142,6 +142,31 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', opts = {} },
 
   { 'norcalli/nvim-colorizer.lua', opts = {} },
+
+  -- TODO: Needs fix
+  -- {
+  --   'ekickx/clipboard-image.nvim',
+  --   opts = {
+  --
+  --     default = {
+  --       img_name = function()
+  --         vim.fn.inputsave()
+  --         local name = vim.fn.input 'Name: '
+  --         vim.fn.inputrestore()
+  --         return name
+  --       end,
+  --     },
+  --
+  --     markdown = {
+  --       img_dir = { 'media', 'src', 'assets', 'img' }, -- Use table for nested dir (New feature form PR #20)
+  --       img_dir_txt = '/assets/img',
+  --       img_handler = function(img)
+  --         local script = string.format('./image_compressor.sh "%s"', img.path)
+  --         os.execute(script)
+  --       end,
+  --     },
+  --   },
+  -- },
   -- {
   --   'IogaMaster/neocord',
   --   opts = {
