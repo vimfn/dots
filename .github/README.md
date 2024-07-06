@@ -1,5 +1,3 @@
- *Philosophy: My dotfiles should prioritize productivity and an efficient, fast workflow. They should be keyboard-driven, mostly using Vim keybinds. Repetitive tasks must be automated with shell scripts, and CLI tools must be preferred over GUI programs. Speed and responsiveness should always be prioritized over fancy, distracting colors and other bloat.*
-
 <img width="100%" src="./screenshots/desktop.png" alt="screenshot of my desktop">
 
 <sub>
@@ -14,6 +12,6 @@
 </sub>
 
 <br/>
+<br/>
 
-
-
+ *Philosophy: My dotfiles should prioritize productivity and an efficient, fast workflow. They should be keyboard-driven, mostly using Vim keybinds. Repetitive tasks must be automated with shell scripts, and CLI tools must be preferred over GUI programs. Speed and responsiveness should always be prioritized over fancy, distracting colors and other bloat.*
