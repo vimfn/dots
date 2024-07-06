@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Slideshare PDF Downloader
+# Requires: pup jq sed awk cat curl
+
+# Copyright (c) 2024 Arunava Ghosh
+# All rights reserved.
+
+if [[ $# -eq 0 ]] ; then
+	echo 'No URL Provided'
+	exit 0
+fi
+
+URL="$1"
+tmpDir=$(mktemp -d)
+cd "$tmpDir" || exit
+
+curl -s $URL -o tmp.html
+
+pageCount=$(cat tmp.html | pup 'span.MetadataToolbar_pageNumber__i6Bhj text{}' | sed '/^[[:space:]]*$/d' | sed '3! d')
+
+imgSrc=$(cat tmp.html | pup 'img#slide-image-0 json{}' | jq '.[0].src' | sed '/^[[:space:]]*$/d' | sed 's/"//g' | awk -F'1-320.jpg' '{print $1}'| sed 's/\/85\//\/75\//g')
+
+for ((i = 1; i <= pageCount; i++)); do
+	wget "$imgSrc""${i}"-2048.jpg
+done
+
+# for i in $(ls -t --time=birth);do mv $i "$(echo "$i" | cut -d- -f4).jpg"; done &&
+
+# Make PDF Size smaller 
+for i in *.jpg; do 
+	convert $i -resize 1024x $i; 
+	convert $i -quality 50% $i;
+done
+
+convert $(ls *.jpg | sort -V) presentation.pdf
+
+mv presentation.pdf "$OLDPWD"

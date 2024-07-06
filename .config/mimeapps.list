@@ -1,9 +1,9 @@
 [Added Associations]
 text/plain=org.xfce.mousepad.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;chromium-browser.desktop;org.pwmt.zathura.desktop;
-image/jpeg=sxiv.desktop;
+image/jpeg=sxiv.desktop;remote-viewer.desktop;gimp.desktop;feh.desktop;code.desktop;
 application/x-subrip=code.desktop;
-image/png=feh.desktop;sxiv.desktop;
+image/png=sxiv.desktop;chromium-browser.desktop;feh.desktop;
 text/html=org.xfce.mousepad.desktop;firefox.desktop;
 
 [Default Applications]
@@ -14,3 +14,4 @@ x-scheme-handler/webcal=chromium-browser.desktop
 text/html=chromium-browser.desktop
 x-scheme-handler/http=chromium-browser.desktop
 x-scheme-handler/https=chromium-browser.desktop
+image/jpeg=sxiv.desktop
