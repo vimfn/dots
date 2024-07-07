@@ -98,3 +98,9 @@ if [ ! -S ~/.ssh/ssh_auth_sock ]; then
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
+
+# vim mode
+bindkey -v
+# restore history search 
+bindkey ^R history-incremental-search-backward 
+bindkey ^S history-incremental-search-forward
