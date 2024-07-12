@@ -142,6 +142,7 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', opts = {} },
 
   { 'norcalli/nvim-colorizer.lua', opts = {} },
+  -- { 'github/copilot.vim' },
 
   -- TODO: Needs fix
   -- {

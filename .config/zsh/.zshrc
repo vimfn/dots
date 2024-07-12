@@ -45,7 +45,6 @@ source $HOME/.zshenv
 
 # aliases
 alias v='nvim'
-alias nt='nvim ~/backup/notes/archive/goals/ideas.md'
 alias f='open "$(fzf)"'
 alias reboot='systemctl reboot'
 alias t='tmux-sessionizer'
