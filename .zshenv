@@ -28,6 +28,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/go/bin:$PATH
 
+# https://unix.stackexchange.com/a/87763/531189
+# export LC_ALL=C
+
 export MPD_HOST="localhost"
 export MPD_PORT="6600"
 
