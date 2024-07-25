@@ -54,9 +54,7 @@ alias ydl='yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(
 alias ydlp='i=1; yt-dlp --playlist-start $i -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(playlist_index)s. %(title)s.%(ext)s"'
 alias mm='ncmpcpp'
 alias nw='newsboat'
-alias td='cat ~/notes/README.md'
-# alias dy='cat ~/notes/daily.md'
-#alias vd='v ~/notes/dump'
+alias rd='cat ~/notes/README.md'
 alias y='yazi'
 
 # 🔒
