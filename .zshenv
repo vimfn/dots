@@ -39,6 +39,7 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
 
-. "/home/ag/.local/share/cargo/env"
+[ -f "/home/ag/.local/share/cargo/env" ] && . "/home/ag/.local/share/cargo/env" # cargo-env
+[ -f "/home/ag/.ghcup/env" ] && . "/home/ag/.ghcup/env" # ghcup-env
 
 if [ -e /home/ag/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ag/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

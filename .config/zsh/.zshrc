@@ -63,7 +63,6 @@ alias y='yazi'
 setopt HIST_IGNORE_SPACE
 alias jrnl=" jrnl"
 
-[ -f "/home/ag/.ghcup/env" ] && . "/home/ag/.ghcup/env" # ghcup-env
 # pnpm
 export PNPM_HOME="/home/ag/.local/share/pnpm"
 case ":$PATH:" in
