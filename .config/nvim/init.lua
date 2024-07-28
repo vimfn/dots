@@ -591,6 +591,7 @@ require('lazy').setup({
         'gopls',
         -- 'html-lsp',
         -- 'htmlhint',
+        'haskell-language-server',
         'lua-language-server',
         'pyright',
         'rust-analyzer',
