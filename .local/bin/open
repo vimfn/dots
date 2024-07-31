@@ -13,10 +13,10 @@ case $(file --mime-type "$@" -bL) in
    image/*)
       # Add support for sxiv for image files
       #
-      (&>/dev/null sxiv "$@" --no-terminal &)
+      (&>/dev/null sxiv "$@" &)
       ;;
    application/pdf | application/postscript | application/epub+zip)
-      (&>/dev/null zathura "$@" --no-terminal &)
+      (&>/dev/null zathura "$@" &)
       ;;
     text/* | application/x-shellscript | application/javascript)
       # Open text, script, or code files using nvim
