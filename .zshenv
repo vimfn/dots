@@ -35,8 +35,8 @@ export ANDROID_HOME=$HOME/.android/sdk
 export ANDROID_SDK_ROOT=$HOME/.android/sdk # for compatibility
 export ANDROID_USER_HOME=$HOME/.android # default
 
-export MPD_HOST="localhost"
-export MPD_PORT="6600"
+# export MPD_HOST="localhost"
+# export MPD_PORT="6600"
 
 # Starting X
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then

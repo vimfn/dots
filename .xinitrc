@@ -34,15 +34,13 @@ xset r rate 300 50 &
 unclutter --timeout=3 &
 
 # Mpd daemon start
-[ ! -s ~/.config/mpd/pid ] && mpd
-[[ -z $(pgrep -xU $UID mpdscribble) ]] && mpdscribble &
+# [ ! -s ~/.config/mpd/pid ] && mpd
+# [[ -z $(pgrep -xU $UID mpdscribble) ]] && mpdscribble &
 
 /home/ag/.nix-profile/bin/greenclip daemon &
 /usr/bin/transmission-daemon &
-
 
 # set new wallpaper and color scheme
 setbg &
 
 exec i3
-

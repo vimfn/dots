@@ -48,7 +48,7 @@ alias v='nvim'
 alias f='open "$(fzf)"'
 alias reboot='systemctl reboot'
 alias t='tmux-sessionizer'
-alias cat='bat'
+alias c='bat'
 alias pn='pnpm'
 alias ydl='yt-dlp --no-playlist --downloader "aria2c" --downloader-args "-j 16 -s 16 -x 16 -k 1M" -f"bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(title)s.%(ext)s" -N 16 --extractor-args "youtube:formats=dashy"'
 alias ydlp='yt-dlp --downloader "aria2c" --downloader-args "-j 16 -s 16 -x 16 -k 1M" -f"bestvideo[height<=720]+bestaudio/best[height<=720]" --download-archive archive.txt -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -N 16 --extractor-args "youtube:formats=dashy"
@@ -103,3 +103,5 @@ bindkey -v
 # restore history search 
 bindkey ^R history-incremental-search-backward 
 bindkey ^S history-incremental-search-forward
+
+export PATH=$PATH:/home/ag/.spicetify
