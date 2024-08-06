@@ -103,5 +103,3 @@ bindkey -v
 # restore history search 
 bindkey ^R history-incremental-search-backward 
 bindkey ^S history-incremental-search-forward
-
-export PATH=$PATH:/home/ag/.spicetify
