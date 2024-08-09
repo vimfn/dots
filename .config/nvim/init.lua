@@ -197,7 +197,7 @@ require('lazy').setup({
   --     git_commit_text = 'Committing changes', -- Format string rendered when committing changes in git (either string or function(filename: string): string)
   --     plugin_manager_text = 'Managing plugins', -- Format string rendered when managing plugins (either string or function(plugin_manager_name: string): string)
   --     reading_text = 'Reading %s', -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
-  --     workspace_text = 'github/arnvgh', -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
+  --     workspace_text = 'github/vimfn', -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
   --     line_number_text = 'Line %s out of %s', -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
   --     terminal_text = 'Using Terminal', -- Format string rendered when in terminal mode.
   --   },

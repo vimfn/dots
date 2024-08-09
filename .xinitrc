@@ -36,6 +36,7 @@ unclutter --timeout=3 &
 # Mpd daemon start
 # [ ! -s ~/.config/mpd/pid ] && mpd
 # [[ -z $(pgrep -xU $UID mpdscribble) ]] && mpdscribble &
+[[ -z $(pgrep -xU $UID spotifyd) ]] && spotifyd &
 
 /home/ag/.nix-profile/bin/greenclip daemon &
 /usr/bin/transmission-daemon &
