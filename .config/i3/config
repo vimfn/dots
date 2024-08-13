@@ -56,10 +56,10 @@ bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute
 #bindsym XF86AudioNext exec --no-startup-id "mpc next"
 #bindsym XF86AudioPrev exec --no-startup-id "mpc prev"
 
-bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause --player=spotifyd"
-bindsym XF86AudioStop exec --no-startup-id "playerctl stop --player=spotifyd"
-bindsym XF86AudioNext exec --no-startup-id "playerctl next --player=spotifyd"
-bindsym XF86AudioPrev exec --no-startup-id "playerctl prev --player=spotifyd"
+bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
+bindsym XF86AudioStop exec --no-startup-id "playerctl stop"
+bindsym XF86AudioNext exec --no-startup-id "playerctl next"
+bindsym XF86AudioPrev exec --no-startup-id "playerctl prev"
 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
@@ -87,7 +87,8 @@ bindsym $mod+Return exec --no-startup-id $TERMINAL
 bindsym $mod+p exec --no-startup-id passmenu
 bindsym $mod+b exec --no-startup-id $BROWSER
 bindsym $mod+e exec --no-startup-id thunar ~/library/books
-bindsym $mod+v exec --no-startup-id /home/ag/.nix-profile/bin/greenclip print | grep . | dmenu -i -l 10 -p clipboard | xargs -r -d'\n' -I '{}' greenclip print '{}'
+# bindsym $mod+v exec --no-startup-id /home/ag/.nix-profile/bin/greenclip print | grep . | dmenu -i -l 10 -p clipboard | xargs -r -d'\n' -I '{}' greenclip print '{}'
+bindsym $mod+v exec --no-startup-id notify-send "greenclip is not installed."
 bindsym $mod+t exec --no-startup-id $BROWSER http://localhost:9091/transmission/web/
 
 bindsym $mod+Shift+x exec --no-startup-id powermenu

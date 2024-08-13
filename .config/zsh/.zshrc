@@ -61,10 +61,13 @@ alias pn='pnpm'
 alias ydl='yt-dlp --no-playlist --downloader "aria2c" --downloader-args "-j 16 -s 16 -x 16 -k 1M" -f"bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(title)s.%(ext)s" -N 16 --extractor-args "youtube:formats=dashy"'
 alias ydlp='yt-dlp --downloader "aria2c" --downloader-args "-j 16 -s 16 -x 16 -k 1M" -f"bestvideo[height<=720]+bestaudio/best[height<=720]" --download-archive archive.txt -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -N 16 --extractor-args "youtube:formats=dashy"
 yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(title)s.%(ext)s" '
-alias mm='ncmpcpp'
+# alias mm='ncmpcpp'
 alias nw='newsboat'
-alias td='v ~/notes/daily/$(date -u +%d-%m-20%y).md'
-alias rd='cat ~/notes/README.md'
+# alias td='v ~/notes/daily/$(date -u +%d-%m-20%y).md'
+# alias rd='cat ~/notes/README.md'
+alias wk='cat ~/notes/week.md'
+alias st='(&>/dev/null sxiv -t . "$@" &)'
+alias tt='(&>/dev/null thunar . "$@" &)'
 alias y='yazi'
 
 # 🔒
