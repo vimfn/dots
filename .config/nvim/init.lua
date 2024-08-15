@@ -168,6 +168,8 @@ require('lazy').setup({
   --     },
   --   },
   -- },
+  --
+  -- TODO: run only if discord is running, pgrep can help.
   -- {
   --   'IogaMaster/neocord',
   --   opts = {
