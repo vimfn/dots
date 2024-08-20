@@ -289,4 +289,4 @@ for_window [class="Signal"] floating enable
 # assign [class="code"] 3
 # assign [class="Thunar"] 5
 #assign [class="discord"] 7
-# assign [class="Zathura"] 9
+assign [class="vesktop"] 10
