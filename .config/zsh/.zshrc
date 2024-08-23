@@ -65,7 +65,7 @@ yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(title)s.%(e
 alias nw='newsboat'
 # alias td='v ~/notes/daily/$(date -u +%d-%m-20%y).md'
 # alias rd='cat ~/notes/README.md'
-alias wk='cat ~/notes/week.md'
+alias wk='cat ~/notes/wk.md'
 alias st='(&>/dev/null sxiv -t . "$@" &)'
 alias tt='(&>/dev/null thunar . "$@" &)'
 alias y='yazi'
