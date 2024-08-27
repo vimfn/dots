@@ -63,10 +63,11 @@ alias ydlp='yt-dlp --downloader "aria2c" --downloader-args "-j 16 -s 16 -x 16 -k
 yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(title)s.%(ext)s" '
 # alias mm='ncmpcpp'
 alias nw='newsboat'
-alias td='v ~/notes/td.md'
-alias wk='v ~/notes/wk.md'
+alias td='cat ~/notes/td.md'
+alias wk='cat ~/notes/wk.md'
 alias st='(&>/dev/null sxiv -t . "$@" &)'
-alias tt='(&>/dev/null thunar . "$@" &)'
+alias th='(&>/dev/null thunar . "$@" &)'
+alias tt='(&>/dev/null sxiv "$@" ~/uni/semi/ffcs.png &)'
 alias y='yazi'
 
 # 🔒
