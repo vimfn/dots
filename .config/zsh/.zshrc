@@ -67,7 +67,7 @@ alias td='cat ~/notes/td.md'
 alias wk='cat ~/notes/wk.md'
 alias st='(&>/dev/null sxiv -t . "$@" &)'
 alias th='(&>/dev/null thunar . "$@" &)'
-alias tt='(&>/dev/null sxiv "$@" ~/uni/semi/ffcs.png &)'
+alias tt='(&>/dev/null sxiv "$@" ~/uni/semi/ffcs.png -f &)'
 alias y='yazi'
 
 # 🔒
