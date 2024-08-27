@@ -68,6 +68,7 @@ alias wk='cat ~/notes/wk.md'
 alias st='(&>/dev/null sxiv -t . "$@" &)'
 alias th='(&>/dev/null thunar . "$@" &)'
 alias tt='(&>/dev/null sxiv "$@" ~/uni/semi/ffcs.png -f &)'
+alias ghstar='$BROWSER https://github.com/$(gh api user/starred --template "{{range .}}{{.full_name|color \"yellow\"}} ({{timeago .updated_at}}){{\"\\n\"}}{{end}}" | fzf)'
 alias y='yazi'
 
 # 🔒
