@@ -187,7 +187,7 @@ require('lazy').setup({
   --     blacklist = {}, -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
   --     file_assets = {}, -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
   --     show_time = true, -- Show the timer
-  --     global_timer = false, -- if set true, timer won't update when any event are triggered
+  --     global_timer = true, -- if set true, timer won't update when any event are triggered
   --     -- Rich Presence text options
   --     editing_text = function(filename)
   --       -- Extract the file extension without the leading dot
