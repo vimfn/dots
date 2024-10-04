@@ -65,12 +65,13 @@ alias sptdl='spotdl --output "{artist}/{album}/{track-number} - {title}.{output-
 alias mm='ncmpcpp'
 alias nw='newsboat'
 alias td='$BROWSER https://calendar.google.com/calendar/u/0/r/day'
-alias wk='cat ~/notes/wk/0.md'
+alias wk='cat ~/notes/wk/$(date +%V).md'
 alias st='(&>/dev/null sxiv -t . "$@" &)'
 alias th='(&>/dev/null thunar . "$@" &)'
 alias tt='(&>/dev/null sxiv "$@" ~/uni/semi/ffcs.png -f &)'
 alias ghstar='$BROWSER https://github.com/$(gh api user/starred --template "{{range .}}{{.full_name|color \"yellow\"}} ({{timeago .updated_at}}){{\"\\n\"}}{{end}}" | fzf)'
 alias y='yazi'
+alias bunx='bun x'
 
 # 🔒
 setopt HIST_IGNORE_SPACE

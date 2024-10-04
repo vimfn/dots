@@ -51,15 +51,15 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 5 --allow-b
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 5 
 bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute 
 
-# bindsym XF86AudioPlay exec --no-startup-id "mpc toggle"
-# bindsym XF86AudioStop exec --no-startup-id "mpc stop"
-# bindsym XF86AudioNext exec --no-startup-id "mpc next"
-# bindsym XF86AudioPrev exec --no-startup-id "mpc prev"
+bindsym XF86AudioPlay exec --no-startup-id "mpc toggle"
+bindsym XF86AudioStop exec --no-startup-id "mpc stop"
+bindsym XF86AudioNext exec --no-startup-id "mpc next"
+bindsym XF86AudioPrev exec --no-startup-id "mpc prev"
 
-bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause --player=spotify_player"
-bindsym XF86AudioStop exec --no-startup-id "playerctl stop --player=spotify_player"
-bindsym XF86AudioNext exec --no-startup-id "playerctl next --player=spotify_player"
-bindsym XF86AudioPrev exec --no-startup-id "playerctl prev --player=spotiyf_player"
+# bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
+# bindsym XF86AudioStop exec --no-startup-id "playerctl stop"
+# bindsym XF86AudioNext exec --no-startup-id "playerctl next"
+# bindsym XF86AudioPrev exec --no-startup-id "playerctl prev"
 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
