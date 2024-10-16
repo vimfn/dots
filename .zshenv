@@ -1,14 +1,14 @@
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="chromium-browser"
+# export BROWSER="brave"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-export XAUTHORITY=/tmp/Xauthority
-export XINITRC="$HOME/.xinitrc"
-export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
+# export XAUTHORITY=/tmp/Xauthority
+# export XINITRC="$HOME/.xinitrc"
+# export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE=$HOME/.local/share/.zsh_history
@@ -39,11 +39,16 @@ export ANDROID_USER_HOME=$HOME/.android # default
 # export MPD_PORT="6600"
 
 # Starting X
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
-fi
+# if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+#   exec startx
+# fi
 
 [ -f "/home/ag/.local/share/cargo/env" ] && . "/home/ag/.local/share/cargo/env" # cargo-env
 [ -f "/home/ag/.ghcup/env" ] && . "/home/ag/.ghcup/env" # ghcup-env
 
-if [ -e /home/ag/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ag/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# if [ -e /home/ag/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ag/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# MACOS
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent

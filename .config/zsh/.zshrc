@@ -35,12 +35,6 @@ antigen apply
 
 eval "$(zoxide init zsh)"
 
-# pywal for alacritty
-#if [[ $TERM == "alacritty" ]]; then
-if ! [[ "$TERM_PROGRAM" == "vscode" ]]; then
-	(cat ~/.cache/wal/sequences &)
-fi
-
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
@@ -54,7 +48,7 @@ source $HOME/.zshenv
 # aliases
 alias v='nvim'
 alias f='open "$(fzf)"'
-alias reboot='systemctl reboot'
+# alias reboot='systemctl reboot'
 alias t='tmux-sessionizer'
 alias cat='bat'
 alias pn='pnpm'
@@ -62,16 +56,16 @@ alias ydl='yt-dlp --no-playlist --downloader "aria2c" --downloader-args "-j 16 -
 alias ydlp='yt-dlp --downloader "aria2c" --downloader-args "-j 16 -s 16 -x 16 -k 1M" -f"bestvideo[height<=720]+bestaudio/best[height<=720]" --download-archive archive.txt -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -N 16 --extractor-args "youtube:formats=dashy"
 yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(title)s.%(ext)s" '
 alias sptdl='spotdl --output "{artist}/{album}/{track-number} - {title}.{output-ext}"'
-alias mm='ncmpcpp'
+# alias mm='ncmpcpp'
 alias nw='newsboat'
 alias td='$BROWSER https://calendar.google.com/calendar/u/0/r/day'
 alias wk='cat ~/notes/wk/$(date +%V).md'
-alias st='(&>/dev/null sxiv -t . "$@" &)'
-alias th='(&>/dev/null thunar . "$@" &)'
-alias tt='(&>/dev/null sxiv "$@" ~/uni/semi/ffcs.png -f &)'
+# alias st='(&>/dev/null sxiv -t . "$@" &)'
+# alias th='(&>/dev/null thunar . "$@" &)'
+# alias tt='(&>/dev/null sxiv "$@" ~/uni/semi/ffcs.png -f &)'
 alias ghstar='$BROWSER https://github.com/$(gh api user/starred --template "{{range .}}{{.full_name|color \"yellow\"}} ({{timeago .updated_at}}){{\"\\n\"}}{{end}}" | fzf)'
 alias y='yazi'
-alias bunx='bun x'
+# alias bunx='bun x'
 
 # 🔒
 setopt HIST_IGNORE_SPACE
