@@ -29,9 +29,9 @@ eval "$(zoxide init zsh)"
 
 # pywal for alacritty
 #if [[ $TERM == "alacritty" ]]; then
-if ! [[ "$TERM_PROGRAM" == "vscode" ]]; then
-	(cat ~/.cache/wal/sequences &)
-fi
+# if ! [[ "$TERM_PROGRAM" == "vscode" ]]; then
+# 	(cat ~/.cache/wal/sequences &)
+# fi
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

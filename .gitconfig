@@ -1,9 +1,11 @@
 [user]
 	name = Arunava Ghosh
-	email = arnvgh@gmail.com
+	email = vimfn@proton.me
 	signingkey = 771C02886F0328E1
 [commit]
 	gpgsign = true
 [tag]
 	gpgsign = true
 
+[safe]
+	directory = /storage/emulated/0/*
