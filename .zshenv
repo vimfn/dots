@@ -47,3 +47,7 @@ fi
 [ -f "/home/ag/.ghcup/env" ] && . "/home/ag/.ghcup/env" # ghcup-env
 
 if [ -e /home/ag/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ag/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# https://stackoverflow.com/questions/57591432/gpg-signing-failed-inappropriate-ioctl-for-device-on-macos-with-maven
+GPG_TTY=$(tty)
+export GPG_TTY
