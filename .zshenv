@@ -31,6 +31,10 @@ export PATH=$HOME/.local/share/go/bin:$PATH
 # https://unix.stackexchange.com/a/87763/531189
 # export LC_ALL=C
 
+# https://stackoverflow.com/a/8161863/19218166
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
 export ANDROID_HOME=$HOME/.android/sdk
 export ANDROID_SDK_ROOT=$HOME/.android/sdk # for compatibility
 export ANDROID_USER_HOME=$HOME/.android # default
@@ -43,8 +47,9 @@ export ANDROID_USER_HOME=$HOME/.android # default
 #   exec startx
 # fi
 
-[ -f "/home/ag/.local/share/cargo/env" ] && . "/home/ag/.local/share/cargo/env" # cargo-env
-[ -f "/home/ag/.ghcup/env" ] && . "/home/ag/.ghcup/env" # ghcup-env
+# [ -f "/home/ag/.local/share/cargo/env" ] && . "/home/ag/.local/share/cargo/env" # cargo-env
+# [ -f "/home/ag/.ghcup/env" ] && . "/home/ag/.ghcup/env" # ghcup-env
+
 
 # if [ -e /home/ag/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ag/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
@@ -52,3 +57,14 @@ export ANDROID_USER_HOME=$HOME/.android # default
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent
+. "/Users/ag/.local/share/cargo/env"
+export PATH="/Users/ag/.local/state/fnm_multishells/24982_1729160872791/bin":$PATH
+export FNM_MULTISHELL_PATH="/Users/ag/.local/state/fnm_multishells/24982_1729160872791"
+export FNM_VERSION_FILE_STRATEGY="local"
+export FNM_DIR="/Users/ag/.local/share/fnm"
+export FNM_LOGLEVEL="info"
+export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+export FNM_COREPACK_ENABLED="false"
+export FNM_RESOLVE_ENGINES="false"
+export FNM_ARCH="arm64"
+rehash

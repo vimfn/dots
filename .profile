@@ -1,3 +1,7 @@
-. "/home/ag/.local/share/cargo/env"
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 
-[ -f "/home/ag/.ghcup/env" ] && . "/home/ag/.ghcup/env" # ghcup-env
+eval "$(brew shellenv)"
+. "$HOME/.local/share/cargo/env"
+
+[ -f "/Users/ag/.ghcup/env" ] && . "/Users/ag/.ghcup/env" # ghcup-env

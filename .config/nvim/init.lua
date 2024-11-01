@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -14,9 +14,7 @@ vim.g.have_nerd_font = false
 
 -- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
@@ -59,8 +57,8 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.list = false
+-- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -238,6 +236,44 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- {
+	-- 	"IogaMaster/neocord",
+	-- 	opts = {
+	--
+	-- 		-- General options
+	-- 		-- logo = 'https://media.tenor.com/mWOA0c_KSgIAAAAi/chibi-anime.gif', -- "auto" or url
+	-- 		-- logo = 'https://cdn.discordapp.com/emojis/813876036088365136.gif?size=128&quality=lossless', -- "auto" or url
+	-- 		logo = "https://cdn.discordapp.com/emojis/839246339837263882.gif?size=128&quality=lossless",
+	-- 		-- https://cdn.discordapp.com/emojis/813876036088365136.gif?size=128&quality=lossless
+	-- 		logo_tooltip = "yea i use (n)vim btw.", -- nil or string
+	-- 		main_image = "language", -- "language" or "logo"
+	-- 		client_id = "1157438221865717891", -- Use your own Discord application client id (not recommended)
+	-- 		log_level = nil, -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
+	-- 		debounce_timeout = 10, -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
+	-- 		blacklist = {}, -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
+	-- 		file_assets = {}, -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
+	-- 		show_time = true, -- Show the timer
+	-- 		global_timer = true, -- if set true, timer won't update when any event are triggered
+	-- 		-- Rich Presence text options
+	-- 		editing_text = function(filename)
+	-- 			-- Extract the file extension without the leading dot
+	-- 			local extension = filename:match("^.+%.([^%.]+)$")
+	-- 			if extension then
+	-- 				return string.format("Editing a %s file", extension)
+	-- 			else
+	-- 				return "Editing %s"
+	-- 			end
+	-- 		end, -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
+	-- 		file_explorer_text = "Browsing %s", -- Format string rendered when browsing a file explorer (either string or function(file_explorer_name: string): string)
+	-- 		git_commit_text = "Committing changes", -- Format string rendered when committing changes in git (either string or function(filename: string): string)
+	-- 		plugin_manager_text = "Managing plugins", -- Format string rendered when managing plugins (either string or function(plugin_manager_name: string): string)
+	-- 		reading_text = "Reading %s", -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
+	-- 		workspace_text = "github/vimfn", -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
+	-- 		line_number_text = "Line %s out of %s", -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
+	-- 		terminal_text = "Using Terminal", -- Format string rendered when in terminal mode.
+	-- 	},
+	-- },
 
 	-- NOTE: Plugins can specify dependencies.
 	--
@@ -524,17 +560,17 @@ require("lazy").setup({
 			--  - settings (table): Override the default settings passed when initializing the server.
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
-				-- clangd = {},
-				-- gopls = {},
-				-- pyright = {},
-				-- rust_analyzer = {},
+				clangd = {},
+				gopls = {},
+				pyright = {},
+				rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
 				-- Some languages (like typescript) have entire language plugins that can be useful:
 				--    https://github.com/pmizio/typescript-tools.nvim
 				--
 				-- But for many setups, the LSP (`ts_ls`) will work just fine
-				-- ts_ls = {},
+				ts_ls = {},
 				--
 
 				lua_ls = {
@@ -743,20 +779,29 @@ require("lazy").setup({
 		end,
 	},
 
-	{ -- You can easily change to a different colorscheme.
-		-- Change the name of the colorscheme plugin below, and then
-		-- change the command in the config to whatever the name of that colorscheme is.
-		--
-		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-		"folke/tokyonight.nvim",
+	-- { -- You can easily change to a different colorscheme.
+	-- 	-- Change the name of the colorscheme plugin below, and then
+	-- 	-- change the command in the config to whatever the name of that colorscheme is.
+	-- 	--
+	-- 	-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+	-- 	"folke/tokyonight.nvim",
+	-- 	priority = 1000, -- Make sure to load this before all the other start plugins.
+	-- 	init = function()
+	-- 		-- Load the colorscheme here.
+	-- 		-- Like many other themes, this one has different styles, and you could load
+	-- 		-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+	-- 		vim.cmd.colorscheme("tokyonight-night")
+	--
+	-- 		-- You can configure highlights by doing something like:
+	-- 		vim.cmd.hi("Comment gui=none")
+	-- 	end,
+	-- },
+
+	{
+		"ellisonleao/gruvbox.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
-			-- Load the colorscheme here.
-			-- Like many other themes, this one has different styles, and you could load
-			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("tokyonight-night")
-
-			-- You can configure highlights by doing something like:
+			vim.cmd.colorscheme("gruvbox")
 			vim.cmd.hi("Comment gui=none")
 		end,
 	},

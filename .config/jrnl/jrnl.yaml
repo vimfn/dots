@@ -14,7 +14,7 @@ inewrap: 79
 journals:
   default:
     encrypt: true
-    journal: ~/Developer/notes/jrnl.txt
+    journal: ~/Developer/notes/.archive/jrnl.txt
 linewrap: 79
 tagsymbols: '#@'
 template: false

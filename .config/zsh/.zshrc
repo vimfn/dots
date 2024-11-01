@@ -1,19 +1,20 @@
 # 💅
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent`
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l > /dev/null || ssh-add
+# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+#   eval `ssh-agent`
+#   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+# fi
+# export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+# ssh-add -l > /dev/null || ssh-add
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $ZDOTDIR/antigen.zsh
+source $ZDOTDIR/.antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -48,7 +49,6 @@ source $HOME/.zshenv
 # aliases
 alias v='nvim'
 alias f='open "$(fzf)"'
-# alias reboot='systemctl reboot'
 alias t='tmux-sessionizer'
 alias cat='bat'
 alias pn='pnpm'
@@ -58,26 +58,62 @@ yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "%(title)s.%(e
 alias sptdl='spotdl --output "{artist}/{album}/{track-number} - {title}.{output-ext}"'
 # alias mm='ncmpcpp'
 alias nw='newsboat'
-alias td='$BROWSER https://calendar.google.com/calendar/u/0/r/day'
-alias wk='cat ~/notes/wk/$(date +%V).md'
-# alias st='(&>/dev/null sxiv -t . "$@" &)'
-# alias th='(&>/dev/null thunar . "$@" &)'
-# alias tt='(&>/dev/null sxiv "$@" ~/uni/semi/ffcs.png -f &)'
-alias ghstar='$BROWSER https://github.com/$(gh api user/starred --template "{{range .}}{{.full_name|color \"yellow\"}} ({{timeago .updated_at}}){{\"\\n\"}}{{end}}" | fzf)'
+alias ghstar='echo https://github.com/$(gh api user/starred --template "{{range .}}{{.full_name|color \"yellow\"}} ({{timeago .updated_at}}){{\"\\n\"}}{{end}}" | fzf)'
 alias y='yazi'
-# alias bunx='bun x'
+
+# uhhh 
+alias g++='g++-14'
+alias gcc='gcc-14'
+# alias ghc='ghc-9.4'
+alias python='python3'
+alias py='python3'
 
 # 🔒
 setopt HIST_IGNORE_SPACE
 alias jrnl=" jrnl"
 
 # pnpm
-export PNPM_HOME="/home/ag/.local/share/pnpm"
+export PNPM_HOME="~/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+function td() {
+    local file=~/Developer/notes/td/$(date +%d-%m-%y).md
+    local today_date=$(date +%d-%m-%y)  # Today's date in DD-MM-YY format
+
+    if [[ -f $file && -s $file ]]; then
+        cat "$file"
+    else
+        {
+            echo "Date: $today_date"
+            echo ""
+        } >> "$file"
+        nvim "$file"
+    fi
+}
+
+function wk() {
+    local file=~/Developer/notes/wk/$(date +%V).md
+
+
+    local start_date=$(date -v-mon -v+0d +%d-%m-%y)  # Start of the week (Monday)
+    local end_date=$(date -v-sun -v+7d +%d-%m-%y)    # End of the week (Sunday)
+
+    if [[ -f $file && -s $file ]]; then
+        cat "$file"
+    else
+        {
+            echo "# Week Start: $start_date"
+            echo "# Week End: $end_date"
+            echo ""
+        } >> "$file"
+
+        nvim "$file"
+    fi
+}
 
 countdown() {
     start="$(( $(date '+%s') + $1))"
@@ -104,3 +140,9 @@ bindkey -v
 # restore history search 
 bindkey ^R history-incremental-search-backward 
 bindkey ^S history-incremental-search-forward
+
+# https://docs.brew.sh/Shell-Completion
+autoload -Uz compinit
+compinit
+
+[ -f "/Users/ag/.ghcup/env" ] && . "/Users/ag/.ghcup/env" # ghcup-env

@@ -1,21 +1,21 @@
 [font]
 size = 18.0
 
-# [font.bold]
-# family = "JetBrainsMono Nerd Font Mono"
-# style = "Bold"
-#
-# [font.bold_italic]
-# family = "JetBrainsMono Nerd Font Mono"
-# style = "Bold Italic"
-#
-# [font.italic]
-# family = "JetBrainsMono Nerd Font Mono"
-# style = "Italic"
-#
-# [font.normal]
-# family = "JetBrainsMono Nerd Font Mono"
-# style = "Regular"
-#
-# [window]
-# opacity= 0.8
+[font.bold]
+family = "Iosevka NFM"
+style = "Bold"
+
+[font.bold_italic]
+family = "Iosevka NFM"
+style = "Bold Italic"
+
+[font.italic]
+family = "Iosevka NFM"
+style = "Italic"
+
+[font.normal]
+family = "Iosevka NFM"
+style = "Regular"
+
+[window]
+opacity= 0.95
