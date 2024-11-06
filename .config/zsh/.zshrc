@@ -48,7 +48,6 @@ source $HOME/.zshenv
 
 # aliases
 alias v='nvim'
-alias f='open "$(fzf)"'
 alias t='tmux-sessionizer'
 alias cat='bat'
 alias pn='pnpm'
@@ -79,6 +78,13 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+f() {
+    local selected="$(fzf)"
+    if [ -n "$selected" ]; then
+        open "$selected"
+    fi
+}
 
 function td() {
     local file=~/Developer/notes/td/$(date +%d-%m-%y).md
@@ -144,5 +150,8 @@ bindkey ^S history-incremental-search-forward
 # https://docs.brew.sh/Shell-Completion
 autoload -Uz compinit
 compinit
+
+# https://apple.stackexchange.com/a/427568/571644
+setopt SHARE_HISTORY
 
 [ -f "/Users/ag/.ghcup/env" ] && . "/Users/ag/.ghcup/env" # ghcup-env

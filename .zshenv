@@ -68,3 +68,10 @@ export FNM_COREPACK_ENABLED="false"
 export FNM_RESOLVE_ENGINES="false"
 export FNM_ARCH="arm64"
 rehash
+
+# https://apple.stackexchange.com/a/427568/571644
+SHELL_SESSIONS_DISABLE=1
+
+if [ -z "$ZSH_COMPDUMP" ]; then
+	ZSH_COMPDUMP="${XDG_CACHE_HOME}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+fi
