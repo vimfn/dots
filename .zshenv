@@ -69,6 +69,8 @@ export FNM_RESOLVE_ENGINES="false"
 export FNM_ARCH="arm64"
 rehash
 
+export BAT_THEME=gruvbox-dark
+
 # https://apple.stackexchange.com/a/427568/571644
 SHELL_SESSIONS_DISABLE=1
 
