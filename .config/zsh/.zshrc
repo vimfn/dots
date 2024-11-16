@@ -72,7 +72,7 @@ setopt HIST_IGNORE_SPACE
 alias jrnl=" jrnl"
 
 # pnpm
-export PNPM_HOME="~/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -138,6 +138,9 @@ stopwatch() {
         sleep 0.1
     done
 }
+
+# https://discussions.apple.com/thread/254859103?sortBy=rank
+setbg () { automator -i "${1}" ~/Documents/setDesktopPix.workflow }
 
 
 # *vim* keybinds

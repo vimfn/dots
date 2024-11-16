@@ -1,4 +1,4 @@
-#files: 984	version: 5.9
+#files: 989	version: 5.9
 
 _comps=(
 ''\''brew' '_brew_services'
@@ -283,6 +283,7 @@ _comps=(
 'cmp' '_cmp'
 'co' '_rcs'
 'code' '_code'
+'colima' '_colima'
 'column' '_column'
 'comb' '_sccs'
 'combine' '_imagemagick'
@@ -395,6 +396,8 @@ _comps=(
 'dnf-2' '_dnf'
 'dnf-3' '_dnf'
 'doas' '_doas'
+'docker' '_docker'
+'dockerd' '_docker'
 'domainname' '_yp'
 'dos2unix' '_dos2unix'
 'dosdel' '_floppy'
@@ -845,6 +848,7 @@ _comps=(
 'light' '_webbrowser'
 'lighty-disable-mod' '_lighttpd'
 'lighty-enable-mod' '_lighttpd'
+'limactl' '_limactl'
 'limit' '_limit'
 'links' '_links'
 'links2' '_links'
@@ -935,6 +939,7 @@ _comps=(
 'mere' '_mere'
 'merge' '_rcs'
 'mergechanges' '_mergechanges'
+'meson' '_meson'
 'metaflac' '_flac'
 'mformat' '_mtools'
 'mgv' '_pspdf'
@@ -1030,6 +1035,7 @@ _comps=(
 'nginx' '_nginx'
 'ngrep' '_ngrep'
 'nice' '_nice'
+'ninja' '_ninja'
 'nkf' '_nkf'
 'nl' '_nl'
 'nm' '_nm'
@@ -1856,7 +1862,8 @@ bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
 autoload -Uz _aerospace _alacritty _bat _brew _brew_services \
-            _fastfetch _fd _fnm _gh _git \
+            _colima _docker _fastfetch _fd _fnm \
+            _gh _git _limactl _meson _ninja \
             _pass _rg _ya _yazi _yt-dlp \
             _zoxide _SUSEconfig __arguments _a2ps _a2utils \
             _aap _abcde _absolute_command_paths _ack _acpi \
