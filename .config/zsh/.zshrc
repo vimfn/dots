@@ -132,19 +132,21 @@ function wk() {
 }
 
 countdown() {
-    start="$(( $(date '+%s') + $1))"
-    while [ $start -ge $(date +%s) ]; do
-        time="$(( $start - $(date +%s) ))"
-        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+    end_time=$(( $(date '+%s') + $1 ))
+    while [ $end_time -ge $(date +%s) ]; do
+        remaining=$(( end_time - $(date +%s) ))
+        printf '%02d:%02d:%02d\r' $((remaining / 3600)) $(( (remaining % 3600) / 60 )) $((remaining % 60))
         sleep 0.1
     done
+    printf '\nTime is up!\n'
 }
+
 
 stopwatch() {
     start=$(date +%s)
     while true; do
-        time="$(( $(date +%s) - $start))"
-        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+        elapsed=$(( $(date +%s) - start ))
+        printf '%02d:%02d:%02d\r' $((elapsed / 3600)) $(( (elapsed % 3600) / 60 )) $((elapsed % 60))
         sleep 0.1
     done
 }
