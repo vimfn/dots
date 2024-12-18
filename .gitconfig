@@ -1,7 +1,7 @@
 [user]
 	name = Arunava Ghosh
-	email = arnvgh@gmail.com
-	signingkey = 771C02886F0328E1
+	email = hi@vimfn.in
+	signingkey = 0DB075DA41E52ABB97ABC0840577D250EA6A8C36
 [commit]
 	gpgsign = true
 [tag]

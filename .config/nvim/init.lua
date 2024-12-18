@@ -168,6 +168,15 @@ require("lazy").setup({
 		},
 	},
 
+	-- {
+	-- 	"supermaven-inc/supermaven-nvim",
+	-- 	config = function()
+	-- 		require("supermaven-nvim").setup({})
+	-- 	end,
+	-- },
+
+	{ "wakatime/vim-wakatime", lazy = false },
+
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
 	--
 	-- This is often very useful to both group configuration, as well as handle
@@ -235,6 +244,13 @@ require("lazy").setup({
 				{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
 			},
 		},
+	},
+
+	{
+		"folke/ts-comments.nvim",
+		opts = {},
+		event = "VeryLazy",
+		enabled = vim.fn.has("nvim-0.10.0") == 1,
 	},
 
 	-- {

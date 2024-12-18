@@ -59,6 +59,8 @@ alias sptdl='spotdl --output "{artist}/{album}/{track-number} - {title}.{output-
 alias nw='newsboat'
 alias ghstar='echo https://github.com/$(gh api user/starred --template "{{range .}}{{.full_name|color \"yellow\"}} ({{timeago .updated_at}}){{\"\\n\"}}{{end}}" | fzf)'
 alias y='yazi'
+alias pf='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf'
+# alias rem='v ~/Developer/notes/reminder.md' # just use gcal
 
 # uhhh 
 alias g++='g++-14'
@@ -86,38 +88,46 @@ f() {
     fi
 }
 
-function td() {
-    local file=~/Developer/notes/td/$(date +%d-%m-%y).md
-    local today_date=$(date +%d-%m-%y)  # Today's date in DD-MM-YY format
-
-    if [[ -f $file && -s $file ]]; then
-        cat "$file"
-    else
-        {
-            echo "Date: $today_date"
-            echo ""
-        } >> "$file"
-        nvim "$file"
-    fi
-}
+# function td() {
+#     local file=~/Developer/notes/today/$(date +%d-%m-%y).md
+#     local today_date=$(date +%d-%m-%y)  # Today's date in DD-MM-YY format
+#
+#     if [[ -f $file && -s $file ]]; then
+#         cat "$file"
+#     else
+#         {
+#             echo "Date: $today_date"
+#             echo ""
+#         } >> "$file"
+#         nvim "$file"
+#     fi
+# }
 
 function wk() {
-    local file=~/Developer/notes/wk/$(date +%V).md
+    local file=~/Developer/notes/week/$(date +%V).md
+    local start_date=$(date -v-mon -v+0d +%d-%m-%y)  # start of the week (monday)
+    local end_date=$(date -v-sun -v+7d +%d-%m-%y)    # end of the week (sunday)
 
-
-    local start_date=$(date -v-mon -v+0d +%d-%m-%y)  # Start of the week (Monday)
-    local end_date=$(date -v-sun -v+7d +%d-%m-%y)    # End of the week (Sunday)
-
-    if [[ -f $file && -s $file ]]; then
-        cat "$file"
-    else
-        {
-            echo "# Week Start: $start_date"
-            echo "# Week End: $end_date"
-            echo ""
-        } >> "$file"
-
+    if [[ "$1" == "--edit" ]]; then
+        if [[ ! -f $file ]]; then
+            {
+                echo "# Week Start: $start_date"
+                echo "# Week End: $end_date"
+                echo ""
+            } >> "$file"
+        fi
         nvim "$file"
+    else
+        if [[ ! -f $file ]]; then
+            {
+                echo "# Week Start: $start_date"
+                echo "# Week End: $end_date"
+                echo ""
+            } >> "$file"
+            nvim "$file"
+        else
+            cat "$file"
+        fi
     fi
 }
 

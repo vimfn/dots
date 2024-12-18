@@ -77,3 +77,4 @@ SHELL_SESSIONS_DISABLE=1
 if [ -z "$ZSH_COMPDUMP" ]; then
 	ZSH_COMPDUMP="${XDG_CACHE_HOME}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 fi
+export PATH="/Users/ag/Library/Python/3.13/bin:$PATH"
