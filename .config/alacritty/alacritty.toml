@@ -19,3 +19,4 @@ style = "Regular"
 
 [window]
 opacity= 0.95
+option_as_alt = "OnlyLeft" # | "OnlyRight" | "Both" | "None" # (macos only)
