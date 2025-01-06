@@ -60,7 +60,16 @@ alias nw='newsboat'
 alias ghstar='echo https://github.com/$(gh api user/starred --template "{{range .}}{{.full_name|color \"yellow\"}} ({{timeago .updated_at}}){{\"\\n\"}}{{end}}" | fzf)'
 alias y='yazi'
 alias pf='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf'
+alias hmm='cat ~/Developer/notes/backlog.md | grep "-" | shuf -n 1'
 # alias rem='v ~/Developer/notes/reminder.md' # just use gcal
+
+# eza
+alias l='eza -lahF --color=auto --icons --sort=size --group-directories-first'
+alias lss='eza -hF --color=auto --icons --sort=size --group-directories-first'
+alias la='eza -ahF --color=auto --icons --sort=size --group-directories-first'
+alias ls='eza -lhF --color=auto --icons --sort=Name --group-directories-first'
+alias lst='eza -lahFT --color=auto --icons --sort=size --group-directories-first'
+alias lt='eza -aT --icons --group-directories-first --color=auto --sort=size'
 
 # uhhh 
 alias g++='g++-14'
