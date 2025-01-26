@@ -60,7 +60,7 @@ alias nw='newsboat'
 alias ghstar='echo https://github.com/$(gh api user/starred --template "{{range .}}{{.full_name|color \"yellow\"}} ({{timeago .updated_at}}){{\"\\n\"}}{{end}}" | fzf)'
 alias y='yazi'
 alias pf='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf'
-alias hmm='cat ~/Developer/notes/backlog.md | grep "-" | shuf -n 1'
+alias hmm='cat ~/Developer/notes/bo*.md | grep "-" | shuf -n 1'
 # alias rem='v ~/Developer/notes/reminder.md' # just use gcal
 
 # uhhh 

@@ -175,7 +175,7 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 
-	{ "wakatime/vim-wakatime", lazy = false },
+	-- { "wakatime/vim-wakatime", lazy = false },
 
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
 	--
